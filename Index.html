@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presupuesto App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="Logo docencia negro SIN FONDO.jpg" alt="Tu Logo" class="logo">
+  </header>
+  <ul class="tabs">
+    <li class="tab" onclick="showTab('presupuesto')">Presupuesto rápido</li>
+    <li class="tab" onclick="showTab('historial')">Historial de trabajos</li>
+  </ul>
+  <div id="presupuesto" class="tab-content">
+    <h2>Presupuesto Rápido</h2>
+    <form>
+      <label for="regimen">Selecciona el régimen:</label>
+      <select id="regimen">
+        <option value="general">Régimen General</option>
+        <option value="autonomo">Autónomo</option>
+      </select><br>
+      <label for="horas">Horas trabajadas:</label>
+      <input type="number" id="horas" required><br>
+      <label for="precio">Precio bruto por hora (€):</label>
+      <input type="number" id="precio" required><br>
+      <label for="km">Kilómetros de ida:</label>
+      <input type="number" id="km"><br>
+      <button type="button" onclick="calcularPresupuesto()">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+  </div>
+  <div id="historial" class="tab-content" style="display:none;">
+    <h2>Historial de Trabajos</h2>
+    <form id="formHistorial">
+      <label for="empresa">Empresa:</label>
+      <input type="text" id="empresa" required><br>
+      <label for="curso">Curso:</label>
+      <input type="text" id="curso" required><br>
+      <label for="fechaInicio">Fecha inicio:</label>
+      <input type="date" id="fechaInicio" required><br>
+      <label for="fechaFin">Fecha fin:</label>
+      <input type="date" id="fechaFin" required><br>
+      <label for="horas">Horas:</label>
+      <input type="number" id="horasHistorial" required><br>
+      <label for="precioHora">Precio hora bruto (€):</label>
+      <input type="number" id="precioHora" required><br>
+      <label for="km">Kilómetros totales:</label>
+      <input type="number" id="kmTotales" required><br>
+      <label for="personaContacto">Persona de Contacto:</label>
+      <input type="text" id="personaContacto"><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email"><br>
+      <label for="movil">Móvil:</label>
+      <input type="text" id="movil"><br>
+      <label for="telefono">Teléfono de la Empresa:</label>
+      <input type="text" id="telefono"><br>
+      <label for="web">Dirección Web:</label>
+      <input type="url" id="web"><br>
+      <button type="button" onclick="agregarTrabajo()">Añadir Trabajo</button>
+    </form>
+    <br>
+    <table border="1" id="tablaHistorial">
+      <thead>
+        <tr>
+          <th>Empresa</th>
+          <th>Curso</th>
+          <th>Fecha inicio</th>
+          <th>Fecha fin</th>
+          <th>Horas</th>
+          <th>Precio hora (€)</th>
+          <th>Kilómetros totales</th>
+          <th>Salario neto (€)</th>
+          <th>Persona de Contacto</th>
+          <th>Email</th>
+          <th>Móvil</th>
+          <th>Teléfono</th>
+          <th>Web</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aquí se añadirán las filas dinámicamente -->
+      </tbody>
+    </table>
+  </div>
+     <script src="script.js"></script>
+    </body>
+    </html>
+    <th>Acciones</th>
+    <button type="button" onclick="exportarHistorial()">Exportar Historial</button>
+    
